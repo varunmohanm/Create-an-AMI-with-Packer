@@ -7,7 +7,7 @@ variable "app_name" {
   default = "staticsite"
 }
 source "amazon-ebs" "httpd" {
-  ami_name      = "PACKER-Site-${var.app_name}"
+  ami_name      = "PACKER-image-${var.app_name}"
   instance_type = "t2.micro"
   region        = "ap-south-1"
   source_ami    = "${var.ami_id}"
@@ -30,3 +30,4 @@ build {
     inline = [ "sudo bash ~/staticsite.sh" ]
   }
 }
+locals {timestamp=regex_replace(timestamp(),"[-TZ:]","")}
