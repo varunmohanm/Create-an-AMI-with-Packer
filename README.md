@@ -13,8 +13,11 @@ unzip packer_1.7.10_linux_amd64.zip
 mv packer /usr/bin/
 
 ##### Check the packer version
-packer version
+
+```
+packer --version
 Packer v1.7.10
+```
 
 ##### For best practices, create a directory for packer projects.
 mkdir packer
